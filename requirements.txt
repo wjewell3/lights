@@ -1,4 +1,3 @@
 rpi-ws281x
 adafruit-circuitpython-neopixel
 RPi.GPIO
-tmux
