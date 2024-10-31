@@ -3,7 +3,7 @@ import neopixel
 import time
 from rainbowio import colorwheel
 
-num_pixels = 50
+num_pixels = 39
 pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.3)
 
 NONE = (0,0,0)
@@ -19,7 +19,7 @@ BROWN = (64,92,51)
 # l2 = l.copy()
 # l2.reverse()
 # l3 = l + l2 # list of values from 0.05 -> 1 -> 0.05, len(40)
-pixels = neopixel.NeoPixel(board.D18, 50, brightness=1.0)
+pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness=1.0)
 increment = 5
 num = 0
 while True:
@@ -30,17 +30,15 @@ while True:
     elif num <=0:
         increment = 5
     # for i in range(len(l3)):
-        # pixels = neopixel.NeoPixel(board.D18, 50, brightness = l3[i])
+        # pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = l3[i])
         # pixels.fill(RED) # red
         # pixels = neopixel.NeoPixel(board.D18, 50, brightness = brightness)
-    for i in range(0,32): #red
+    for i in range(0,6): # green
+        pixels[i] = (num, 0, 0)
+    for i in range(6,36): #red
         pixels[i] = (0, num, 0)
-    for i in range(32,35): # green
-        pixels[i] = (num, 0, 0)
-    for i in range(35,43): # blue
+    for i in range(36,39): # blue
         pixels[i] = (0, 0, num)
-    for i in range(43,50):
-        pixels[i] = (num, 0, 0)
     pixels.show()
     # time.sleep(0.0001)
 
