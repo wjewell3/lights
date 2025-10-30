@@ -2,19 +2,37 @@
 
 Headless RaspberryPi lights programming for Halloween costume
 
-To get to work on raspy, had to run the following:
+pins for lights
+power (red) goes on pin 2 (1st pin on outside)
+data (blue) goes on pin 6 (3rd pin on outside)
+white (ground) goes on pin 12 (6th on outside)
+
+setup script:
 ```
-sudo python3 -m venv /home/pi/root_env
-sudo /home/pi/root_env/bin/pip install -r requirements.txt
-sudo /home/pi/root_env/bin/python3 lights.py
+sudo snap install tmux  --classic
+#To create a session that will persist after ssh terminates, run the following
+tmux new -s my_session
+ssh pi@raspberrypi.local
+git clone https://github.com/wjewell3/lights.git
+cd lights
+sudo apt update
+sudo apt install python3.13-dev
+sudo python3 -m venv venv
+source venv/bin/activate
+sudo /home/pi/lights/venv/bin/pip install -r requirements.txt
+sudo /home/pi/lights/venv/bin/python bee.py
+# dettach from session
+Ctrl + b  then  d
+# reattach
+tmux attach -t my_session
 ```
 
-To create a session that will persist after ssh terminates, run the following
+initiate later:
 ```
 tmux new -s my_session
-tmux detach -s my_session
-```
-Later can reattach with:
-```
-tmux attach -t my_session
+ssh pi@raspberrypi.local
+cd lights
+source venv/bin/activate
+sudo /home/pi/lights/venv/bin/python bee.py
+Ctrl + b  then  d
 ```
