@@ -2,12 +2,12 @@
 
 Headless RaspberryPi lights programming for Halloween costume
 
-pins for lights
-power (red) goes on pin 2 (1st pin on outside)
-data (blue) goes on pin 6 (3rd pin on outside)
-white (ground) goes on pin 12 (6th on outside)
+Pins for lights  
+power (red) goes on pin 2 (1st pin on outside)  
+data (blue) goes on pin 6 (3rd pin on outside)  
+white (ground) goes on pin 12 (6th on outside)  
 
-setup script:
+Setup script:  
 ```
 sudo snap install tmux  --classic
 #To create a session that will persist after ssh terminates, run the following
@@ -27,7 +27,7 @@ Ctrl + b  then  d
 tmux attach -t my_session
 ```
 
-initiate later:
+initiate later:  
 ```
 tmux new -s my_session
 ssh pi@raspberrypi.local
