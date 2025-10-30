@@ -22,7 +22,7 @@ while True:
     
     # Set all pixels to yellow with current brightness
     # More red than green for a warmer yellow
-    green = int(brightness * 0.6)  # Less green
+    green = int(brightness * 0.4)  # Less green
     red = brightness  # Full red
     pixels.fill((green, red, 0))
     pixels.show()
