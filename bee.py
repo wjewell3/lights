@@ -21,8 +21,10 @@ while True:
         increment = 5
     
     # Set all pixels to yellow with current brightness
-    # Yellow = full green + full red, no blue
-    pixels.fill((brightness, brightness, 0))
+    # More red than green for a warmer yellow
+    green = int(brightness * 0.6)  # Less green
+    red = brightness  # Full red
+    pixels.fill((green, red, 0))
     pixels.show()
     
     # Small delay for smooth fading
