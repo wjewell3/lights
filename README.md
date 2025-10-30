@@ -27,7 +27,7 @@ Ctrl + b  then  d
 tmux attach -t my_session
 ```
 
-initiate later:  
+Initiate later:  
 ```
 tmux new -s my_session
 ssh pi@raspberrypi.local
